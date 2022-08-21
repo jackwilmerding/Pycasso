@@ -52,8 +52,7 @@ def post_pixel(x, y, color):
     payload = {"x": x, "y": y, "color": color}
     req = requests.post("https://jackhsullivan.com/place", headers = headers, json = payload)
     print(payload)
-    assert req.text == "{\"success\":\"Pixel placed\"}", req.text
-    sleep(0.5)
+    sleep(0.1)
 
 def paint(filename, x_start, y_start):
     data = get_data(filename)
@@ -100,4 +99,4 @@ if __name__ == "__main__":
     while(True):
         anti_grief("bubbas.jpg", 401, 76)
         anti_grief("winston_sunset.jpg", 3, 359)
-        sleep(120)
+        sleep(60)
