@@ -56,11 +56,11 @@ def post_pixel(x, y, color):
     sleep(0.5)
 
 def paint(filename, x_start, y_start):
-    data = getData(filename)
+    data = get_data(filename)
     data = regress(data)
     for i in range(len(data)):
         for j in range(len(data[0])):
-            postPixel(x_start + j, y_start + i, data[i][j])
+            post_pixel(x_start + j, y_start + i, data[i][j])
             print(f"Painting, {round(((i * len(data[0]) + j) / (len(data) * len(data[0]))) * 100, 2)}% done")
 
 def get_board():
@@ -99,4 +99,5 @@ def anti_grief(filename, x_start, y_start):
 if __name__ == "__main__":
     while(True):
         anti_grief("bubbas.jpg", 401, 76)
+        anti_grief("winston_sunset.jpg", 3, 359)
         sleep(120)
